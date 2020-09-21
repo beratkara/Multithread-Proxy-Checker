@@ -6,6 +6,10 @@ cp .env.example .env
 ~~~~
 
 ~~~~
+npm install
+~~~~
+
+~~~~
 node --experimental-worker index.js
 ~~~~
 

@@ -18,7 +18,7 @@ function check (options)
             try {
                 await page.setViewport({ width: 0, height: 0 });
                 await page.goto(process.env.CHECK_URL, {waitUntil: 'load', timeout: process.env.CHECK_TIMEOUT});
-                const found = await page.evaluate(() => window.find("ok"));
+                const found = await page.evaluate(() => window.find(process.env.CHECK_TEXT));
                 if (found)
                 {
                     let stream = fs.createWriteStream(process.env.OUTPUT_FILE, {'flags': 'a'});
